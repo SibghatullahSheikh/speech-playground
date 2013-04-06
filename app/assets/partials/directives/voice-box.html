@@ -3,7 +3,7 @@
 <hr/>
 <div class="row-fluid">
   <div class="span6">
-    <h3 ng-class="{active:selectedColumn == 'ingredients'}" class="column-header"> Składniki</h3>
+    <h3 ng-class="{active:selectedColumn == 'ingredients'}" class="column-header"> Ingredients</h3>
     <p ng-hide="ingredients.length" class="well well-small">Say "ingredients" to edit this column</p>
     <ol>
       <li ng-repeat="ingredient in ingredients"> 
@@ -12,7 +12,7 @@
     </ol>
   </div>
   <div class="span6">
-    <h3 ng-class="{active:selectedColumn == 'tasks'}" class="column-header"> Przepis</h3>
+    <h3 ng-class="{active:selectedColumn == 'tasks'}" class="column-header"> Recipe</h3>
     <p ng-hide="tasks.length" class="well well-small">Say "recipe" to edit this column</p>
     <p ng-hide="!tasks.length" class="well well-small"><span ng-repeat="task in tasks">{{task.text}}</span><span class="interim">{{interimText}}</span></p>
   </div>

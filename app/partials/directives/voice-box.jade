@@ -5,14 +5,14 @@ button.toggle-recognition.btn.btn-large.btn-primary.btn-block(ng-class="{active:
 hr
 .row-fluid
   .span6
-    h3.column-header(ng-class="{active:selectedColumn == 'ingredients'}")  Składniki
+    h3.column-header(ng-class="{active:selectedColumn == 'ingredients'}")  Ingredients
     p.well.well-small(ng-hide="ingredients.length")
       | Say "ingredients" to edit this column
     ol
       li(ng-repeat="ingredient in ingredients") 
         .well.well-small {{ingredient.text}}
   .span6
-    h3.column-header(ng-class="{active:selectedColumn == 'tasks'}")  Przepis
+    h3.column-header(ng-class="{active:selectedColumn == 'tasks'}")  Recipe
     p.well.well-small(ng-hide="tasks.length")
       | Say "recipe" to edit this column
     p(ng-hide="!tasks.length").well.well-small
