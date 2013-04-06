@@ -63,7 +63,7 @@ angular.module('app.directives.voice-box', [])
 
         $scope.start = ->
           _.delay (->
-            recognition.lang = 'pl-PL'
+            recognition.lang = 'en-EN'
             recognition.start()
             ), 1000
 
@@ -75,8 +75,8 @@ angular.module('app.directives.voice-box', [])
           if $scope.isTalking then $scope.start() else $scope.stop()
 
         applyCommand = (command)->
-          nameRegex = /mam na imię \w*|nazywam się \w*|nazywam sie \w*/i
-          nameReplaceRegex = /mam na imię |nazywam się |nazywam sie /i
+          nameRegex = /my name is \w*|I am \w*/i
+          nameReplaceRegex = /My name is |I am /i
           command = command.toLowerCase()
 
           command = command.trim()
@@ -92,19 +92,19 @@ angular.module('app.directives.voice-box', [])
             $scope.author.name = name
             # alert "Cześć, #{name}!"
 
-          else if command is 'składniki'
+          else if command is 'ingredients'
               $scope.selectedColumn = 'ingredients'
-          else if command is 'gówno'or command is 'gówno'
+          else if command is 'Thats not mine'or command is 'Thats not mine'
               $window.location.href = '//2013pto.pl'
               # $scope.selectedColumn = 'tasks'
-          else if command is 'przepis'
+          else if command is 'recipe'
               $scope.selectedColumn = 'tasks'
           else if command is 'stop'or command is 'koniec'
               $scope.stop()
-          else if command is 'usuń wszystko'or command is 'usuń wszystkie'
+          else if command is 'remove all'or command is 'remove all'
               $scope[$scope.ingredients] = []
               $scope[$scope.tasks] = []
-          else if command is 'powiadomienie'
+          else if command is 'notify'
             alert 'command!'
           else $scope[$scope.selectedColumn].unshift text: command
           
