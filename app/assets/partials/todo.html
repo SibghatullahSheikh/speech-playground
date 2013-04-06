@@ -1,0 +1,14 @@
+
+<div ng-app="ng-app">
+  <div ng-controller="TodoCtrl">
+    <form novalidate="novalidate" ng-submit="addTodo()" class="form-horizontal new-todo">
+      <input type="text" ng-model="newTodo.title" placeholder="Add todo item..."/>
+    </form>
+    <hr/>
+    <section class="todos-list">
+      <note ng-class="{active:isActive}" ng-repeat="todo in todos | filter:newTodo.title | orderBy:created" model="todo" on-remove="removeTodo(todo)"></note>
+    </section>
+    <hr/>
+    <div class="well">Done {{todosDone()}} / {{todos.length}}</div>
+  </div>
+</div>

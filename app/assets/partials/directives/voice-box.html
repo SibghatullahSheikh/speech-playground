@@ -1,0 +1,31 @@
+
+<button ng-class="{active: isTalking}" ng-click="toggleRecognition()" class="toggle-recognition btn btn-large btn-primary btn-block"><i class="gen-enclosed icon-mic status-indicator"> </i></button>
+<hr/>
+<div class="row-fluid">
+  <div class="span6">
+    <h3 ng-class="{active:selectedColumn == 'ingredients'}" class="column-header"> Składniki</h3>
+    <p ng-hide="ingredients.length" class="well well-small">Say "ingredients" to edit this column</p>
+    <ol>
+      <li ng-repeat="ingredient in ingredients"> 
+        <div class="well well-small">{{ingredient.text}}</div>
+      </li>
+    </ol>
+  </div>
+  <div class="span6">
+    <h3 ng-class="{active:selectedColumn == 'tasks'}" class="column-header"> Przepis</h3>
+    <p ng-hide="tasks.length" class="well well-small">Say "recipe" to edit this column</p>
+    <p ng-hide="!tasks.length" class="well well-small"><span ng-repeat="task in tasks">{{task.text}}</span><span class="interim">{{interimText}}</span></p>
+  </div>
+</div>
+<div ng-hide="ingredients.length || tasks.length" class="well well-small">
+  <h3> Available commands, are:</h3>
+  <hr/>
+  <ul>
+    <li><span>koniec, stop</span></li>
+    <li><span>składniki</span></li>
+    <li><span>przepis</span></li>
+    <li><span>usuń wszystkie, usuń wszystko</span></li>
+    <li><span>powiadomienie</span></li>
+    <li><span>nazywam się..., mam na imię...</span></li>
+  </ul>
+</div>

@@ -1,0 +1,89 @@
+note{
+  display:          inline-block;
+  width:            230px;
+  // height: 8em;
+  vertical-align:   bottom;
+  margin-left:      5px;
+  margin-right:     5px;
+  margin-bottom:    10px;
+  background-color: rgba(255,255,255,.9);
+  position:         relative;
+  // padding: 10px;
+  border-radius:1px;
+  box-shadow: 
+  0 1px 0 rgba(255,255,255,.0) inset, 
+  0 1px 3px rgba(0,0,0, .3);
+
+  .done-btn{
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    box-sizing: border-box;
+    i{
+      position: absolute;
+      left: 50%;
+      margin-left: -6px;
+      top: 50%;
+      margin-top: -11px;
+    }
+  }
+
+  .remove-wrapper{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+  }
+
+  .remove-btn{
+    // width: 20px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .note-checkbox-wrapper{
+    padding: 10px;
+    width: 30px;
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: rgba(0,0,0,.05);
+    border-right: 1px solid #dadada;
+  }
+
+  .note-content-wrapper{
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding-right: 25px;
+    textarea{
+      height: 8em;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      background: transparent;
+      border:0 none;
+    }
+  }
+
+
+  &:hover{
+    background-color: white;
+    box-shadow: 
+    0 1px 0 rgba(255,255,255,.0) inset, 
+    0 3px 5px rgba(0,0,0, .7);
+  }
+
+  &.active{
+    background-color: white;
+    box-shadow: 
+    0 1px 0 rgba(255,255,255,.0) inset, 
+    0 3px 5px rgba(0,0,0, .7),
+    0 3px 25px rgba(0,0,0, .7);
+  }
+}

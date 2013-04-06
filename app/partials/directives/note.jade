@@ -1,0 +1,8 @@
+buton.done-btn.btn.btn-inverse(ng-click="model.done = !model.done; update()", ng-class="{active:model.done}")
+  i(ng-class="{'icon-star':!model.done, 'icon-star-2':model.done}")
+  //- input(type="checkbox", ng-model="model.done", ng-change="update()")
+.note-content-wrapper
+  textarea(ng-model="model.title", ui-focus="isActive = true", ui-blur="update(); isActive = false")
+  .btn-group.pull-right.remove-wrapper
+    button(ng-click="remove()").btn.btn-mini.btn-danger.remove-btn
+      i.icon-remove

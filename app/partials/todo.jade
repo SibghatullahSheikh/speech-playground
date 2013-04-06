@@ -1,0 +1,9 @@
+div(ng-app='ng-app')
+  div(ng-controller="TodoCtrl")
+    form(novalidate, ng-submit="addTodo()").form-horizontal.new-todo
+      input(type="text", ng-model="newTodo.title", placeholder="Add todo item...")
+    hr
+    section.todos-list
+      note(ng-class="{active:isActive}",ng-repeat="todo in todos | filter:newTodo.title | orderBy:created", model="todo", on-remove="removeTodo(todo)")
+    hr
+    .well Done {{todosDone()}} / {{todos.length}}
